@@ -11,6 +11,30 @@
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
 
     <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!--EmailJs Send emails-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('user_S9vi1Ps5d1pPbNrCADk5a');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function(){
+
+            document.getElementById("contact-form").addEventListener("submit", function(event){
+            event.preventDefault()
+            const SentText = document.getElementById("mail-text");
+            this.contact_number.value = Math.random()*100000 | 0;
+            emailjs.sendForm("service_w1vugp8", "template_5cwc8k6", this)
+                .then(function(){
+                    SentText.classList.add("mail_sent");
+                })
+            })
+        }
+    </script>
+    
 
     <title>Ramon Puon | WebPortfolio</title>
 </head>
@@ -470,23 +494,22 @@
                 <form action="" class="contact_form grid">
                     <div class="contact_inputs grid">
                         <div class="contact_content">
+                            <input type="hidden" name="contact_number">
                             <label for="" class="contact_label">Name</label>
-                            <input type="text" class="contact_input">
+                            <input type="text" class="contact_input" name="user_name">
                         </div>
                         <div class="contact_content">
                             <label for="" class="contact_label">Email</label>
-                            <input type="email" class="contact_input">
+                            <input type="email" class="contact_input" name="user_email">
                         </div>
                         <div class="contact_content">
                             <label for="" class="contact_label">Message</label>
-                            <textarea name="" id="" cols="0" rows="7" class="contact_input"></textarea>
+                            <textarea name="message" id="" cols="0" rows="7" class="contact_input"></textarea>
                         </div>
 
                         <div>
-                            <a href="" class="button button--flex">
-                                Send Message
-                                <i class="uil uil-message button_icon"></i>
-                            </a>
+                            <input type="submit" class="button button--flex" value="Send Message">
+                            <span class="mail_text" id="mail-text">Message Sent!</span>
                         </div>
                     </div>
                 </form>
