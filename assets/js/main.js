@@ -35,9 +35,10 @@ const skillsHeader = document.querySelectorAll(".skills_header");
 function toggleSkills(){
     let itemClass = this.parentNode.className;
 
-    for(i=0; i < skillsContent.length; i++){
-        skillsContent[i].className = "skills_content skills_closed"
-    }
+    if(itemClass === "skills_content skills_open"){
+       this.parentNode.className = "skills_content skills_closed"
+       }
+    
     if(itemClass === "skills_content skills_closed"){
         this.parentNode.className = "skills_content skills_open"
     }
