@@ -269,7 +269,7 @@ img{
 @keyframes move {
     
     50%{
-        transform: translateY(-40px);
+        transform: translateY(-45px);
     }
 }
 
