@@ -256,6 +256,23 @@ img{
     font-size: var(--big-font-size);
 }
 
+/*Subtitles animation*/
+.home_subtitle_container{
+    height: 30px;
+    overflow: hidden;
+}
+.home_title_wraper{
+    height: 100%;
+    animation: move 5s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+    
+    50%{
+        transform: translateY(-40px);
+    }
+}
+
 .home_subtitle{
     font-size: var(--h3-font-size);
     color: var(--text-color);
