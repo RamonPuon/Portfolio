@@ -260,10 +260,11 @@ img{
 .home_subtitle_container{
     height: 30px;
     overflow: hidden;
+    margin-bottom: 8px;
 }
 .home_title_wraper{
     height: 100%;
-    animation: move 5s ease-in-out infinite alternate;
+    animation: move 6s ease-in-out infinite alternate;
 }
 
 @keyframes move {
