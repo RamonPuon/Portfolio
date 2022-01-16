@@ -246,6 +246,7 @@ img{
 .home_blob{
     width: 275px;
     fill: var(--first-color);
+    display: block;
 }
 .home_data{
     grid-column: 1/3;
