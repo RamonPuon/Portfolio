@@ -687,6 +687,21 @@ skills_arrow{
     margin-bottom: var(--mb-0-75);
 }
 
+.portfolio_buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.repo_icon{
+    font-size: 1.25;
+    margin-left: var(--mb-0-5);
+    transition: all .3s ease-in-out; 
+}
+
+.portfolio_button:hover .repo_icon{
+    transform: scale(1.35);
+}
+
 .portfolio_button:hover .button_icon{
     transform: translateX(.25rem);
 }
